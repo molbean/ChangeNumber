@@ -36,10 +36,17 @@ public class ChangeNumberTest {
 		assertThat(actual,is(expected));
 	}
 	@Test
-	public void twentyと出力する() {
+	public void onehundredと出力する() {
 		IntToEng ite = new IntToEng();
-		String expected = "twenty";
-		String actual = ite.translateEng(20);
+		String expected = "one hundred";
+		String actual = ite.translateEng(100);
+		assertThat(actual,is(expected));
+	}
+	@Test
+	public void nineと出力する() {
+		IntToEng ite = new IntToEng();
+		String expected = "nine hundred ninety nine";
+		String actual = ite.translateEng(999);
 		assertThat(actual,is(expected));
 	}
 

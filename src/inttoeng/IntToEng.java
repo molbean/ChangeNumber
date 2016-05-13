@@ -8,6 +8,8 @@ public class IntToEng {
 
         Scanner sc = new Scanner(System.in);
         int input = sc.nextInt();
+        ArrayList<String> oneList = new ArrayList<String>();//１の位
+    	ArrayList<String> tenList = new ArrayList<String>();//10の位
 
         System.out.println(translateEng(input));
 
@@ -54,14 +56,25 @@ public class IntToEng {
     
     	if(n>=0 && n<20){
     		e = oneList.get(n);
-    	}else{
-    		int oneP = n % 10;
-    		int tenP = n / 10;
+    	}else if(n>=21 && n<=99){
+    		int oneP = n % 10;//1の位
+    		int tenP = n / 10;//10の位
     		if(oneP==0){
     			e = tenList.get(tenP);
     		}else{
     		e = tenList.get(tenP) + " " + oneList.get(oneP);
+    		}	
+    	}else{
+    		int hundredPlace = n / 100;//100の位
+    		int hundredRemainder = n % 100;//100で割った余り
+    		int onePlace = hundredRemainder % 10;
+    		int tenPlace = hundredRemainder / 10;
+    		if(onePlace==0){
+    			e = oneList.get(hundredPlace) + " hundred";
+    		}else{
+    		e = oneList.get(hundredPlace) + " hundred " + tenList.get(tenPlace) + " " + oneList.get(onePlace);
     		}
+    		
     	}
         return e;
     }
