@@ -49,6 +49,19 @@ public class ChangeNumberTest {
 		String actual = ite.translateEng(999);
 		assertThat(actual,is(expected));
 	}
-
+	@Test
+	public void threethousandと出力する() {
+		IntToEng ite = new IntToEng();
+		String expected = "three thousand";
+		String actual = ite.translateEng(3000);
+		assertThat(actual,is(expected));
+	}
+	@Test
+	public void eightytwohundredninetytwoと出力する() {
+		IntToEng ite = new IntToEng();
+		String expected = "eighty two hundred ninety two";
+		String actual = ite.translateEng(8292);
+		assertThat(actual,is(expected));
+	}
 
 }
