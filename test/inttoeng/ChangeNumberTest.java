@@ -70,5 +70,60 @@ public class ChangeNumberTest {
 		String actual = ite.translateEng(1254);
 		assertThat(actual,is(expected));
 	}
-
+	@Test
+	public void hundredoneと出力する() {
+		IntToEng ite = new IntToEng();
+		String expected = "one hundred one";
+		String actual = ite.translateEng(101);
+		assertThat(actual,is(expected));
+	}
+	@Test
+	public void onehundredtenと出力する() {
+		IntToEng ite = new IntToEng();
+		String expected = "one hundred ten";
+		String actual = ite.translateEng(110);
+		assertThat(actual,is(expected));
+	}
+	@Test
+	public void onehundredtwelveと出力する() {
+		IntToEng ite = new IntToEng();
+		String expected = "one hundred twelve";
+		String actual = ite.translateEng(112);
+		assertThat(actual,is(expected));
+	}
+	@Test
+	public void onehundredtwentyと出力する() {
+		IntToEng ite = new IntToEng();
+		String expected = "one hundred twenty";
+		String actual = ite.translateEng(120);
+		assertThat(actual,is(expected));
+	}
+	@Test
+	public void onehundrednineteenと出力する() {
+		IntToEng ite = new IntToEng();
+		String expected = "one hundred eightteen";
+		String actual = ite.translateEng(118);
+		assertThat(actual,is(expected));
+	}
+	@Test
+	public void threehundrednineteenと出力する() {
+		IntToEng ite = new IntToEng();
+		String expected = "three hundred nineteen";
+		String actual = ite.translateEng(319);
+		assertThat(actual,is(expected));
+	}
+	@Test
+	public void fivehundredfiveと出力する() {
+		IntToEng ite = new IntToEng();
+		String expected = "five hundred five";
+		String actual = ite.translateEng(505);
+		assertThat(actual,is(expected));
+	}
+	@Test
+	public void fivehundredninetyと出力する() {
+		IntToEng ite = new IntToEng();
+		String expected = "five hundred ninety";
+		String actual = ite.translateEng(590);
+		assertThat(actual,is(expected));
+	}
 }
