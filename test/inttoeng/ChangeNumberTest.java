@@ -21,5 +21,27 @@ public class ChangeNumberTest {
 		String actual = ite.translateEng(21);
 		assertThat(actual,is(expected));
 	}
+	@Test
+	public void eightynineと出力する() {
+		IntToEng ite = new IntToEng();
+		String expected = "eighty nine";
+		String actual = ite.translateEng(89);
+		assertThat(actual,is(expected));
+	}
+	@Test
+	public void thirtyと出力する() {
+		IntToEng ite = new IntToEng();
+		String expected = "thirty";
+		String actual = ite.translateEng(30);
+		assertThat(actual,is(expected));
+	}
+	@Test
+	public void twentyと出力する() {
+		IntToEng ite = new IntToEng();
+		String expected = "twenty";
+		String actual = ite.translateEng(20);
+		assertThat(actual,is(expected));
+	}
+
 
 }
