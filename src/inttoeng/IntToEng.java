@@ -58,36 +58,45 @@ public class IntToEng {
     		e = oneList.get(n);
     	}else if(n>=21 && n<=99){//21から99まで
     		int onePlace = n % 10;//1の位
-    		int tenPlace = n / 10;//10の位
+    		int tenPlace = divide(n,10);
     		if(onePlace==0){
     			e = tenList.get(tenPlace);
     		}else{
     		e = tenList.get(tenPlace) + " " + oneList.get(onePlace);
     		}	
     	}else if(n>=100 && n<=999){//100から999まで
-    		int hundredPlace = n / 100;//100の位
+    		int hundredPlace = divide(n,100);
     		int hundredRemainder = n % 100;//100で割った余り
     		int onePlace = hundredRemainder % 10;
-    		int tenPlace = hundredRemainder / 10;
+    		int tenPlace = divide(hundredRemainder,10);
     		if(onePlace==0){
     			e = oneList.get(hundredPlace) + " hundred";
     		}else{
     		e = oneList.get(hundredPlace) + " hundred " + tenList.get(tenPlace) + " " + oneList.get(onePlace);
     		}
-    		
+    	
     	}else{
-    		int thousandPlace = n / 1000;//1000の位
+    		
+    		int thousandPlace = divide(n,1000);//1000の位
     		int thousandRemainder = n % 1000;//100で割った余り
-    		int hundredPlace = thousandRemainder / 100;
+    		int hundredPlace =divide(thousandRemainder,100);
     		int hundredRemainder = thousandRemainder % 100;
     		int onePlace = hundredRemainder % 10;
-    		int tenPlace = hundredRemainder / 10;
+    		int tenPlace = divide(hundredRemainder,10);
     		if(thousandRemainder==0){
     			e = oneList.get(thousandPlace)+" thousand";
+    		}else if(thousandPlace == 1 && hundredPlace >=1){
+    			int teenhundred = divide(n,100);
+    			int teenhundredRemainder = n % 100;
+    			e = oneList.get(teenhundred) + " hundred "+tenList.get(tenPlace) + " " + oneList.get(onePlace);
     		}else{
     			e = tenList.get(thousandPlace) + " "+oneList.get(hundredPlace)+" hundred "+tenList.get(tenPlace) + " " + oneList.get(onePlace);
     		}
     	}
         return e;
+    }
+    public static int divide(int h,int d){
+    	int divided = h / d;
+    	return divided;
     }
 }

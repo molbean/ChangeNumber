@@ -63,5 +63,12 @@ public class ChangeNumberTest {
 		String actual = ite.translateEng(8292);
 		assertThat(actual,is(expected));
 	}
+	@Test
+	public void twelvehundredfiftyfourと出力する() {
+		IntToEng ite = new IntToEng();
+		String expected = "twelve hundred fifty four";
+		String actual = ite.translateEng(1254);
+		assertThat(actual,is(expected));
+	}
 
 }
